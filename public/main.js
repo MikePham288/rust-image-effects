@@ -1,6 +1,14 @@
 console.log("test");
 
-function init() {
+async function init() {
+  let rustApp = null;
+  try {
+    rustApp = await import("../pkg");
+  } catch (error) {
+    console.error(error);
+    return;
+  }
+  console.log(rustApp);
   const input = document.getElementById("upload");
   const fireReader = new FileReader();
   fireReader.onloadend = () => {
@@ -8,6 +16,7 @@ function init() {
       /^data:image\/(png|jpeg|jpg);base64,/,
       ""
     );
+    rustApp.grayScale(base64);
     console.log(input.files[0]);
     console.log("base 64 of an image: ", base64);
   };
