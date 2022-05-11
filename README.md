@@ -1,0 +1,2 @@
+# rust-simple-project
+This is a short tutorial on how to make a small grey scale application with HTML, JavaScript for UI, and Rust to grey scale image quickly. The process includes receive an image from the UI, encode it to base64, then send the base64 image to rust, decode the base64 image and grey scale it, then re-encode the image to base 64 and send back to the JavaScript side to display the result
