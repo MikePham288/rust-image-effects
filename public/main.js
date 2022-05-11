@@ -16,7 +16,8 @@ async function init() {
       /^data:image\/(png|jpeg|jpg);base64,/,
       ""
     );
-    rustApp.grayScale(base64);
+    let imgDataUrl = rustApp.grayScale(base64);
+    document.getElementById("new-img").setAttribute("src", imgDataUrl);
   };
   input.addEventListener("change", () => {
     fireReader.readAsDataURL(input?.files[0]);
